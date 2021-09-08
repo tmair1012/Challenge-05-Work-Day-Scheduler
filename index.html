@@ -22,11 +22,11 @@
   <div class="container">
     <!-- Timeblocks go here -->
     <!--8 AM-->
-    <div class='row align-items-start'>
+    <div class='row'>
       <div class='col-sm-2'>
         <p>8 AM</p>
       </div>
-      <div class='col-sm-4'></div>
+      <div id='changeColor' class='col-sm-8'></div>
       <div class='col-sm-2'></div>
       </div>
     <!--9 AM-->
@@ -34,7 +34,7 @@
       <div class='col-sm-2'>
         <p>9 AM</p>
       </div>
-      <div class='col-sm-6'></div>
+      <div id='changeColor' class='col-sm-8'></div>
       <div class='col-sm-3'></div>
       </div>
     <!--10 AM-->
@@ -42,7 +42,7 @@
       <div class='col'>
         <p>10 AM</p>
       </div>
-      <div class='col'></div>
+      <div id='changeColor' class='col-sm-8'></div>
       <div class='col'></div>
       </div>
     <!--11 AM-->
@@ -50,7 +50,7 @@
       <div class='col'>
         <p>11 AM</p>
       </div>
-      <div class='col'></div>
+      <div id='changeColor' class='col-sm-8'></div>
       <div class='col'></div>
     </div>
     <!--12 PM-->
@@ -58,7 +58,7 @@
       <div class='col'>
         <p>12 PM</p>
       </div>
-      <div class='col'></div>
+      <div id='changeColor' class='col-sm-8'></div>
       <div class='col'></div>
       </div>
     <!--1 PM-->
@@ -66,7 +66,7 @@
       <div class='col'>
         <p>1 PM</p>
       </div>
-      <div class='col'></div>
+      <div id='changeColor' class='col-sm-8'></div>
       <div class='col'></div>
       </div>
     <!--2 PM-->
@@ -74,7 +74,7 @@
       <div class='col'>
         <p>2 PM</p>
       </div>
-      <div class='col'></div>
+      <div id='changeColor' class='col-sm-8'></div>
       <div class='col'></div>
       </div>
     <!--3 PM-->
@@ -82,7 +82,7 @@
       <div class='col'>
         <p>3 PM</p>
       </div>
-      <div class='col'></div>
+      <div class='col-sm-8'></div>
       <div class='col'></div>
       </div>
     <!--4 PM-->
@@ -90,7 +90,7 @@
       <div class='col'>
         <p>4 PM</p>
       </div>
-      <div class='col'></div>
+      <div class='col-sm-8'></div>
       <div class='col'></div>
       </div>
 
@@ -106,6 +106,13 @@
     var getDate = moment();
     dateEl = getDate.format('MMMM Do YYYY, h:mm:ss a');
     $('#currentDay').append(dateEl);
+
+  //Function to change color of div based on current time.
+    
+    $('.col-sm-8').css({'background-color':'green',
+      'border' : '1px solid black'});
+    $('.col-sm-2').css({'border-right':'black'})
+  //Function to write into box and save to local storage.
   </script>
 
 </body>
