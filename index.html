@@ -23,76 +23,78 @@
     <!-- Timeblocks go here -->
     <!--8 AM-->
     <div class='row'>
-      <div class='col-sm-2'>
+      <div class='col-sm-1'>
         <p>8 AM</p>
       </div>
-      <div id='changeColor' class='col-sm-8'></div>
-      <div class='col-sm-2'></div>
+      <div id='changeColor' contentEditable ='true'class='col-sm-9'></div>
+      <div class='col-sm-2'>
+        <button class='saveButton'></button>
       </div>
+    </div>
     <!--9 AM-->
     <div class='row'>
-      <div class='col-sm-2'>
+      <div class='col-sm-1'>
         <p>9 AM</p>
       </div>
-      <div id='changeColor' class='col-sm-8'></div>
-      <div class='col-sm-3'></div>
-      </div>
+      <div id='changeColor' contentEditable ='true'class='col-sm-9'></div>
+      <div class='col-sm-2'></div>
+    </div>
     <!--10 AM-->
     <div class='row'>
-      <div class='col'>
+      <div class='col-sm-1'>
         <p>10 AM</p>
       </div>
-      <div id='changeColor' class='col-sm-8'></div>
-      <div class='col'></div>
-      </div>
+      <div id='changeColor' contentEditable ='true'class='col-sm-9'></div>
+      <div class='col-sm-2'></div>
+    </div>
     <!--11 AM-->
     <div class='row'>
-      <div class='col'>
+      <div class='col-sm-1'>
         <p>11 AM</p>
       </div>
-      <div id='changeColor' class='col-sm-8'></div>
-      <div class='col'></div>
+      <div id='changeColor' contentEditable ='true'class='col-sm-9'></div>
+      <div class='col-sm-2'></div>
     </div>
     <!--12 PM-->
     <div class='row'>
-      <div class='col'>
+      <div class='col-sm-1'>
         <p>12 PM</p>
       </div>
-      <div id='changeColor' class='col-sm-8'></div>
-      <div class='col'></div>
-      </div>
+      <div id='changeColor' contentEditable ='true'class='col-sm-9'></div>
+      <div class='col-sm-2'></div>
+    </div>
     <!--1 PM-->
     <div class='row'>
-      <div class='col'>
+      <div class='col-sm-1'>
         <p>1 PM</p>
       </div>
-      <div id='changeColor' class='col-sm-8'></div>
-      <div class='col'></div>
-      </div>
+      <div id='changeColor' contentEditable ='true'class='col-sm-9'></div>
+      <div class='col-sm-2'></div>
+    </div>
     <!--2 PM-->
     <div class='row'>
-      <div class='col'>
+      <div class='col-sm-1'>
         <p>2 PM</p>
       </div>
-      <div id='changeColor' class='col-sm-8'></div>
-      <div class='col'></div>
-      </div>
+      <div id='changeColor' contentEditable ='true' class= 'col-sm-9'></div>
+      <div  class='col-sm-2'></div>
+    </div>
     <!--3 PM-->
     <div class='row'>
-      <div class='col'>
+      <div class='col-sm-1'>
         <p>3 PM</p>
       </div>
-      <div class='col-sm-8'></div>
-      <div class='col'></div>
-      </div>
+      <div id='changeColor'contentEditable ='true'class='col-sm-9'></div>
+      <div class='col-sm-2'></div>
+    </div>
     <!--4 PM-->
     <div class='row'>
-      <div class='col'>
+      <div class='col-sm-1'>
         <p>4 PM</p>
       </div>
-      <div class='col-sm-8'></div>
-      <div class='col'></div>
-      </div>
+      <div id='changeColor'contentEditable ='true'class='col-sm-9'></div>
+      <div class='col-sm-2'></div>
+    </div>
 
   </div>
 
@@ -107,12 +109,36 @@
     dateEl = getDate.format('MMMM Do YYYY, h:mm:ss a');
     $('#currentDay').append(dateEl);
 
-  //Function to change color of div based on current time.
-    
-    $('.col-sm-8').css({'background-color':'green',
-      'border' : '1px solid black'});
-    $('.col-sm-2').css({'border-right':'black'})
-  //Function to write into box and save to local storage.
+    //Function to change color of div based on current time.
+    $('.row').css({
+      'border-bottom': '1px solid black',
+    });
+    $('.col-sm-9').css({
+      'background-color': 'green',
+      'max-height': '77px'
+    });
+    $('.col-sm-2').css({
+      'background-color': 'lightblue',
+      'max-height': '77px'
+    })
+
+
+
+    //Function to write into box and save to local storage.
+    $('.col-sm-2').click(function () {
+
+    })
+
+    //Function to color code blocks based on time
+    function timeColor(){
+      var timeColor = moment();
+      timeColorEl = timeColor.format('h:mm:ss a');
+      console.log(timeColorEl);
+      //if (timeColor > ){
+
+      //}
+    }
+    timeColor();
   </script>
 
 </body>
