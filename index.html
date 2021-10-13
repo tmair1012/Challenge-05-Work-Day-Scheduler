@@ -26,7 +26,7 @@
       <div class='col-sm-1'>
         <p>8 AM</p>
       </div>
-      <div id='changeColor' contentEditable ='true'class='col-sm-9'></div>
+      <div id='eightam' contentEditable ='true'class='col-sm-9'></div>
       <div class='col-sm-2'>
         <button class='saveButton'></button>
       </div>
@@ -36,7 +36,7 @@
       <div class='col-sm-1'>
         <p>9 AM</p>
       </div>
-      <div id='changeColor' contentEditable ='true'class='col-sm-9'></div>
+      <div id='nineam' contentEditable ='true'class='col-sm-9'></div>
       <div class='col-sm-2'></div>
     </div>
     <!--10 AM-->
@@ -44,7 +44,7 @@
       <div class='col-sm-1'>
         <p>10 AM</p>
       </div>
-      <div id='changeColor' contentEditable ='true'class='col-sm-9'></div>
+      <div id='tenam' contentEditable ='true'class='col-sm-9'></div>
       <div class='col-sm-2'></div>
     </div>
     <!--11 AM-->
@@ -52,7 +52,7 @@
       <div class='col-sm-1'>
         <p>11 AM</p>
       </div>
-      <div id='changeColor' contentEditable ='true'class='col-sm-9'></div>
+      <div id='elevenam' contentEditable ='true'class='col-sm-9'></div>
       <div class='col-sm-2'></div>
     </div>
     <!--12 PM-->
@@ -60,7 +60,7 @@
       <div class='col-sm-1'>
         <p>12 PM</p>
       </div>
-      <div id='changeColor' contentEditable ='true'class='col-sm-9'></div>
+      <div id='twelvepm' contentEditable ='true'class='col-sm-9'></div>
       <div class='col-sm-2'></div>
     </div>
     <!--1 PM-->
@@ -68,7 +68,7 @@
       <div class='col-sm-1'>
         <p>1 PM</p>
       </div>
-      <div id='changeColor' contentEditable ='true'class='col-sm-9'></div>
+      <div id='onepm' contentEditable ='true'class='col-sm-9'></div>
       <div class='col-sm-2'></div>
     </div>
     <!--2 PM-->
@@ -76,7 +76,7 @@
       <div class='col-sm-1'>
         <p>2 PM</p>
       </div>
-      <div id='changeColor' contentEditable ='true' class= 'col-sm-9'></div>
+      <div id='twopm' contentEditable ='true' class= 'col-sm-9'></div>
       <div  class='col-sm-2'></div>
     </div>
     <!--3 PM-->
@@ -84,7 +84,7 @@
       <div class='col-sm-1'>
         <p>3 PM</p>
       </div>
-      <div id='changeColor'contentEditable ='true'class='col-sm-9'></div>
+      <div id='threepm'contentEditable ='true'class='col-sm-9'></div>
       <div class='col-sm-2'></div>
     </div>
     <!--4 PM-->
@@ -92,7 +92,7 @@
       <div class='col-sm-1'>
         <p>4 PM</p>
       </div>
-      <div id='changeColor'contentEditable ='true'class='col-sm-9'></div>
+      <div id='fourpm'contentEditable ='true'class='col-sm-9'></div>
       <div class='col-sm-2'></div>
     </div>
 
@@ -113,10 +113,7 @@
     $('.row').css({
       'border-bottom': '1px solid black',
     });
-    $('.col-sm-9').css({
-      'background-color': 'green',
-      'max-height': '77px'
-    });
+    
     $('.col-sm-2').css({
       'background-color': 'lightblue',
       'max-height': '77px'
@@ -131,12 +128,132 @@
 
     //Function to color code blocks based on time
     function timeColor(){
-      var timeColor = moment();
-      timeColorEl = timeColor.format('h:mm:ss a');
-      console.log(timeColorEl);
-      //if (timeColor > ){
+      //set current time
+      var timeColors = moment();
+      //sets times to start of the hour to compare
+      var eightAM = moment().set({'hour': 8, 'minute': 00, 'seconds': 00});
+      var nineAM = moment().set({'hour': 9, 'minute': 00, 'seconds': 00});
+      var tenAM = moment().set({'hour': 10, 'minute': 00, 'seconds': 00});
+      var elevenAM = moment().set({'hour': 11, 'minute': 00, 'seconds': 00});
+      var twelvePM = moment().set({'hour': 12, 'minute': 00, 'seconds': 00});
+      var onePM = moment().set({'hour': 13, 'minute': 00, 'seconds': 00});
+      var twoPM = moment().set({'hour': 14, 'minute': 00, 'seconds': 00});
+      var threePM = moment().set({'hour': 15, 'minute': 00, 'seconds': 00});
+      var fourPM = moment().set({'hour': 16, 'minute': 00, 'seconds': 00});
+      var fivePM = moment().set({'hour': 17, 'minute': 00, 'seconds': 00});
 
-      //}
+      
+      var timeslots =[eightAM, nineAM, tenAM, elevenAM, twelvePM, onePM, twoPM, threePM, fourPM, fivePM];
+      
+      //test to see if moment is working
+      timeColorEl = timeColors.format('h:mm:ss a');
+      console.log(eightAM);
+      console.log(timeColorEl);
+
+      //loops to restart the day green.
+      for (let i = 0; i < timeslots.length; i++) {
+        if(timeColors.isAfter(timeslots[i])){
+          $('.col-sm-9').css({
+      'background-color': 'green',
+      'max-height': '77px'
+    });
+        }
+        else{
+          $('.col-sm-9').css({
+      'background-color': 'red',
+      'max-height': '77px'
+    });
+        }
+      }
+
+      //GET GREY COLOR
+
+      //Between 8 and 9
+      if(timeColors.isBetween(timeslots[0], timeslots[1])){
+          $('#eightam').css({
+      'background-color': 'grey',
+      'max-height': '77px'
+    });
+        }
+        //Between 9 and 10
+        if(timeColors.isBetween(timeslots[1], timeslots[2])){
+          $('#nineam').css({
+      'background-color': 'grey',
+      'max-height': '77px'
+    });
+        }
+        //Between 10 and 11
+        if(timeColors.isBetween(timeslots[2], timeslots[3])){
+          $('#tenam').css({
+      'background-color': 'grey',
+      'max-height': '77px'
+    });
+        }
+        //Between 11 and 12
+        if(timeColors.isBetween(timeslots[3], timeslots[4])){
+          $('#elevenam').css({
+      'background-color': 'grey',
+      'max-height': '77px'
+    });
+        }
+        //Between 12 and 1
+        if(timeColors.isBetween(timeslots[4], timeslots[5])){
+          $('#twelvepm').css({
+      'background-color': 'grey',
+      'max-height': '77px'
+    });
+        }
+        //Between 1 and 2
+        if(timeColors.isBetween(timeslots[5], timeslots[6])){
+          $('#onepm').css({
+      'background-color': 'grey',
+      'max-height': '77px'
+    });
+        }
+        //Between 2 and three
+        if(timeColors.isBetween(timeslots[6], timeslots[7])){
+          $('#twopm').css({
+      'background-color': 'grey',
+      'max-height': '77px'
+    });
+        }
+        //Between 3 and four
+        if(timeColors.isBetween(timeslots[7], timeslots[8])){
+          $('#threepm').css({
+      'background-color': 'grey',
+      'max-height': '77px'
+    });
+        }
+        if(timeColors.isBetween(timeslots[8], timeslots[9])){
+          $('#fourpm').css({
+      'background-color': 'grey',
+      'max-height': '77px'
+    });
+        }
+
+        //GET GREEN COLORS
+
+
+      //Set all time tables to green
+      /*if(timeColor.isBefore(eightAM) || timeColor.isAfter(fivePM)){
+        $('.col-sm-9').css({
+      'background-color': 'green',
+      'max-height': '77px'
+    });
+      }
+      //8 AM Time Colors
+      if (timeColor.isAfter(eightAM) && timeColor.isBefore(nineAM)){
+        $('#eightam').css({
+      'background-color': 'grey',
+      'max-height': '77px'
+    });
+      }
+      else {
+        $('.col-sm-9').css({
+      'background-color': 'red',
+      'max-height': '77px'
+    }); 
+      } */
     }
     timeColor();
   </script>
