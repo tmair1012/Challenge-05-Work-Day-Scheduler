@@ -26,7 +26,7 @@
       <div class='col-sm-1'>
         <p>8 AM</p>
       </div>
-      <div id='eightam' contentEditable ='true'class='col-sm-9'></div>
+      <input id='eightam' class='col-sm-9'></input>
       <div class='col-sm-2'>
         <button class='saveButton'></button>
       </div>
@@ -36,7 +36,8 @@
       <div class='col-sm-1'>
         <p>9 AM</p>
       </div>
-      <div id='nineam' contentEditable ='true'class='col-sm-9'></div>
+    <input id='nineam' class='col-sm-9'>
+    </input>
       <div class='col-sm-2'></div>
     </div>
     <!--10 AM-->
@@ -44,7 +45,7 @@
       <div class='col-sm-1'>
         <p>10 AM</p>
       </div>
-      <div id='tenam' contentEditable ='true'class='col-sm-9'></div>
+      <input id='tenam'class='col-sm-9'></input>
       <div class='col-sm-2'></div>
     </div>
     <!--11 AM-->
@@ -52,7 +53,7 @@
       <div class='col-sm-1'>
         <p>11 AM</p>
       </div>
-      <div id='elevenam' contentEditable ='true'class='col-sm-9'></div>
+      <input id='elevenam' class='col-sm-9'></input>
       <div class='col-sm-2'></div>
     </div>
     <!--12 PM-->
@@ -60,7 +61,7 @@
       <div class='col-sm-1'>
         <p>12 PM</p>
       </div>
-      <div id='twelvepm' contentEditable ='true'class='col-sm-9'></div>
+      <input id='twelvepm'class='col-sm-9'></input>
       <div class='col-sm-2'></div>
     </div>
     <!--1 PM-->
@@ -68,7 +69,7 @@
       <div class='col-sm-1'>
         <p>1 PM</p>
       </div>
-      <div id='onepm' contentEditable ='true'class='col-sm-9'></div>
+      <input id='onepm'class='col-sm-9'></input>
       <div class='col-sm-2'></div>
     </div>
     <!--2 PM-->
@@ -76,7 +77,7 @@
       <div class='col-sm-1'>
         <p>2 PM</p>
       </div>
-      <div id='twopm' contentEditable ='true' class= 'col-sm-9'></div>
+      <input id='twopm'class= 'col-sm-9'></input>
       <div  class='col-sm-2'></div>
     </div>
     <!--3 PM-->
@@ -84,7 +85,7 @@
       <div class='col-sm-1'>
         <p>3 PM</p>
       </div>
-      <div id='threepm'contentEditable ='true'class='col-sm-9'></div>
+      <input id='threepm'class='col-sm-9'></input>
       <div class='col-sm-2'></div>
     </div>
     <!--4 PM-->
@@ -92,7 +93,7 @@
       <div class='col-sm-1'>
         <p>4 PM</p>
       </div>
-      <div id='fourpm'contentEditable ='true'class='col-sm-9'></div>
+      <input id='fourpm'class='col-sm-9'></input>
       <div class='col-sm-2'></div>
     </div>
 
@@ -109,7 +110,7 @@
     dateEl = getDate.format('MMMM Do YYYY, h:mm:ss a');
     $('#currentDay').append(dateEl);
 
-    //Function to change color of div based on current time.
+    //styling
     $('.row').css({
       'border-bottom': '1px solid black',
     });
@@ -122,6 +123,11 @@
 
 
     //Function to write into box and save to local storage.
+
+    //clears storage for next day
+    function clearSchedule(){
+      $('.col-sm-9').empty();
+    }
     $('.col-sm-2').click(function () {
 
     })
@@ -168,12 +174,14 @@
 
 
       //GET RED COLORS
+      //sets all times before 9 to red, if not 9 yet the 8 am will stay green
       if(timeColors.isAfter(timeslots[0])){
           $('#eightam').css({
       'background-color': 'red',
       'max-height': '77px'
     });
         }
+        //sets all times before 10 to red
         if(timeColors.isAfter(timeslots[0,1])){
           $('#eightam').css({
       'background-color': 'red',
@@ -184,7 +192,8 @@
       'max-height': '77px'
     });
         }
-        if(timeColors.isAfter(timeslots[0,1, 2])){
+        //sets all times before 11 to red
+        if(timeColors.isAfter(timeslots[0,1,2])){
           $('#eightam').css({
       'background-color': 'red',
       'max-height': '77px'
@@ -198,6 +207,7 @@
       'max-height': '77px'
     });
         }
+        //sets all times before 12 to red
         if(timeColors.isAfter(timeslots[0,1,2,3])){
           $('#eightam').css({
       'background-color': 'red',
@@ -216,6 +226,7 @@
       'max-height': '77px'
     });
         }
+        //sets all times before 1 to red
         if(timeColors.isAfter(timeslots[0,1,2,3,4])){
           $('#eightam').css({
       'background-color': 'red',
@@ -238,6 +249,7 @@
       'max-height': '77px'
     });
         }
+        //sets all times before 2 to red
         if(timeColors.isAfter(timeslots[0,1,2,3,4,5])){
           $('#eightam').css({
       'background-color': 'red',
@@ -264,6 +276,7 @@
       'max-height': '77px'
     });
         }
+        //sets all times before 3 to red
         if(timeColors.isAfter(timeslots[0,1,2,3,4,5,6])){
           $('#eightam').css({
       'background-color': 'red',
@@ -294,6 +307,7 @@
       'max-height': '77px'
     });
         }
+        //sets all times before 4 to red
         if(timeColors.isAfter(timeslots[0,1,2,3,4,5,6,7])){
           $('#eightam').css({
       'background-color': 'red',
@@ -328,6 +342,7 @@
       'max-height': '77px'
     });
         }
+        // Sets all times before 5 to red
         if(timeColors.isAfter(timeslots[0,1,2,3,4,5,6,7,8])){
           $('#eightam').css({
       'background-color': 'red',
@@ -430,30 +445,6 @@
       'max-height': '77px'
     });
         }
-
-        
-
-
-      //Set all time tables to green
-      /*if(timeColor.isBefore(eightAM) || timeColor.isAfter(fivePM)){
-        $('.col-sm-9').css({
-      'background-color': 'green',
-      'max-height': '77px'
-    });
-      }
-      //8 AM Time Colors
-      if (timeColor.isAfter(eightAM) && timeColor.isBefore(nineAM)){
-        $('#eightam').css({
-      'background-color': 'grey',
-      'max-height': '77px'
-    });
-      }
-      else {
-        $('.col-sm-9').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    }); 
-      } */
     }
     timeColor();
   </script>
