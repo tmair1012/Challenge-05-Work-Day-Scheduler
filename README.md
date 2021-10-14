@@ -21,9 +21,9 @@ Simply type a worok task into a time slot, and hit the blue button, this will sa
 Tyler Mair - Github: tmair1012
 
 ## Screenshots
-[!Screenshot] ()
-[!Screenshot] ()
-[!Screenshot] ()
+[!Screenshot] (https://user-images.githubusercontent.com/87788050/137357862-9c1948e8-68cb-4ca0-99fc-4e8fbec4b3f7.png)
+[!Screenshot] (https://user-images.githubusercontent.com/87788050/137358006-5a65826e-05c7-4abb-a58f-b5203e3918e2.png)
+[!Screenshot] (https://user-images.githubusercontent.com/87788050/137358102-241c7e4d-083e-4a11-9a8c-b3b123c89485.png)
 
 ## License
 N/A at this time.
