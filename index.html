@@ -26,7 +26,7 @@
       <div class='col-sm-1'>
         <p>8 AM</p>
       </div>
-      <input id='eightam' type='text' placeholder ='' class='col-sm-9'></input>
+      <input id='eightam' type='text' placeholder='' class='col-sm-9'></input>
       <button id='eightbutton' class='col-sm-2'>
       </button>
     </div>
@@ -35,8 +35,8 @@
       <div class='col-sm-1'>
         <p>9 AM</p>
       </div>
-    <input id='nineam' class='col-sm-9'>
-    </input>
+      <input id='nineam' class='col-sm-9'>
+      </input>
       <button class='col-sm-2'></button>
     </div>
     <!--10 AM-->
@@ -44,7 +44,7 @@
       <div class='col-sm-1'>
         <p>10 AM</p>
       </div>
-      <input id='tenam'class='col-sm-9'></input>
+      <input id='tenam' class='col-sm-9'></input>
       <button class='col-sm-2'></button>
     </div>
     <!--11 AM-->
@@ -60,7 +60,7 @@
       <div class='col-sm-1'>
         <p>12 PM</p>
       </div>
-      <input id='twelvepm'class='col-sm-9'></input>
+      <input id='twelvepm' class='col-sm-9'></input>
       <button class='col-sm-2'></button>
     </div>
     <!--1 PM-->
@@ -68,7 +68,7 @@
       <div class='col-sm-1'>
         <p>1 PM</p>
       </div>
-      <input id='onepm'class='col-sm-9'></input>
+      <input id='onepm' class='col-sm-9'></input>
       <button class='col-sm-2'></button>
     </div>
     <!--2 PM-->
@@ -76,7 +76,7 @@
       <div class='col-sm-1'>
         <p>2 PM</p>
       </div>
-      <input id='twopm'class= 'col-sm-9'></input>
+      <input id='twopm' class='col-sm-9'></input>
       <button class='col-sm-2'></button>
     </div>
     <!--3 PM-->
@@ -84,7 +84,7 @@
       <div class='col-sm-1'>
         <p>3 PM</p>
       </div>
-      <input id='threepm'class='col-sm-9'></input>
+      <input id='threepm' class='col-sm-9'></input>
       <button class='col-sm-2'></button>
     </div>
     <!--4 PM-->
@@ -92,7 +92,7 @@
       <div class='col-sm-1'>
         <p>4 PM</p>
       </div>
-      <input id='fourpm'class='col-sm-9'></input>
+      <input id='fourpm' class='col-sm-9'></input>
       <button class='col-sm-2'></button>
     </div>
 
@@ -113,7 +113,7 @@
     $('.row').css({
       'border-bottom': '1px solid black',
     });
-    
+
     $('.col-sm-2').css({
       'background-color': 'lightblue',
       'max-height': '77px'
@@ -122,17 +122,17 @@
 
 
     //Function to write into box and save to local storage.
-    
+
     var eightinput = $('#eightam').val()
-    
-    $('eightbutton').on('click', function(eightinput){
+
+    $('#eightbutton').on('click', function (eightinput) {
       localStorage.setItem('eightinput', JSON.stringify(eightinput));
     })
 
 
-    
+
     //clears storage for next day
-    function clearSchedule(){
+    function clearSchedule() {
       $('.col-sm-9').empty();
     }
     $('.col-sm-2').click(function () {
@@ -140,24 +140,24 @@
     })
 
     //Function to color code blocks based on time
-    function timeColor(){
+    function timeColor() {
       //set current time
       var timeColors = moment();
       //sets times to start of the hour to compare
-      var eightAM = moment().set({'hour': 8, 'minute': 00, 'seconds': 00});
-      var nineAM = moment().set({'hour': 9, 'minute': 00, 'seconds': 00});
-      var tenAM = moment().set({'hour': 10, 'minute': 00, 'seconds': 00});
-      var elevenAM = moment().set({'hour': 11, 'minute': 00, 'seconds': 00});
-      var twelvePM = moment().set({'hour': 12, 'minute': 00, 'seconds': 00});
-      var onePM = moment().set({'hour': 13, 'minute': 00, 'seconds': 00});
-      var twoPM = moment().set({'hour': 14, 'minute': 00, 'seconds': 00});
-      var threePM = moment().set({'hour': 15, 'minute': 00, 'seconds': 00});
-      var fourPM = moment().set({'hour': 16, 'minute': 00, 'seconds': 00});
-      var fivePM = moment().set({'hour': 17, 'minute': 00, 'seconds': 00});
+      var eightAM = moment().set({ 'hour': 8, 'minute': 00, 'seconds': 00 });
+      var nineAM = moment().set({ 'hour': 9, 'minute': 00, 'seconds': 00 });
+      var tenAM = moment().set({ 'hour': 10, 'minute': 00, 'seconds': 00 });
+      var elevenAM = moment().set({ 'hour': 11, 'minute': 00, 'seconds': 00 });
+      var twelvePM = moment().set({ 'hour': 12, 'minute': 00, 'seconds': 00 });
+      var onePM = moment().set({ 'hour': 13, 'minute': 00, 'seconds': 00 });
+      var twoPM = moment().set({ 'hour': 14, 'minute': 00, 'seconds': 00 });
+      var threePM = moment().set({ 'hour': 15, 'minute': 00, 'seconds': 00 });
+      var fourPM = moment().set({ 'hour': 16, 'minute': 00, 'seconds': 00 });
+      var fivePM = moment().set({ 'hour': 17, 'minute': 00, 'seconds': 00 });
 
 
-      var timeslots =[eightAM, nineAM, tenAM, elevenAM, twelvePM, onePM, twoPM, threePM, fourPM, fivePM];
-      
+      var timeslots = [eightAM, nineAM, tenAM, elevenAM, twelvePM, onePM, twoPM, threePM, fourPM, fivePM];
+
       //test to see if moment is working
       timeColorEl = timeColors.format('h:mm:ss a');
       console.log(eightAM);
@@ -165,293 +165,293 @@
 
       //default to green.
       for (let i = 0; i < timeslots.length; i++) {
-        if(timeColors.isBefore(timeslots[i])){
+        if (timeColors.isBefore(timeslots[i])) {
           $('.col-sm-9').css({
-      'background-color': 'green',
-      'max-height': '77px'
-    });
+            'background-color': 'green',
+            'max-height': '77px'
+          });
         }
-        else{
+        else {
           $('.col-sm-9').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
+            'background-color': 'red',
+            'max-height': '77px'
+          });
         }
       }
 
 
       //GET RED COLORS
-      //sets all times before 9 to red, if not 9 yet the 8 am will stay green
-      if(timeColors.isAfter(timeslots[0])){
-          $('#eightam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-        }
-        //sets all times before 10 to red
-        if(timeColors.isAfter(timeslots[0,1])){
-          $('#eightam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#nineam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-        }
-        //sets all times before 11 to red
-        if(timeColors.isAfter(timeslots[0,1,2])){
-          $('#eightam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#nineam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#tenam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-        }
-        //sets all times before 12 to red
-        if(timeColors.isAfter(timeslots[0,1,2,3])){
-          $('#eightam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#nineam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#tenam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#elevenam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-        }
-        //sets all times before 1 to red
-        if(timeColors.isAfter(timeslots[0,1,2,3,4])){
-          $('#eightam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#nineam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#tenam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#elevenam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#twelvepm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-        }
-        //sets all times before 2 to red
-        if(timeColors.isAfter(timeslots[0,1,2,3,4,5])){
-          $('#eightam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#nineam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#tenam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#elevenam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#twelvepm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#onepm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-        }
-        //sets all times before 3 to red
-        if(timeColors.isAfter(timeslots[0,1,2,3,4,5,6])){
-          $('#eightam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#nineam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#tenam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#elevenam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#twelvepm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#onepm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#twopm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-        }
-        //sets all times before 4 to red
-        if(timeColors.isAfter(timeslots[0,1,2,3,4,5,6,7])){
-          $('#eightam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#nineam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#tenam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#elevenam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#twelvepm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#onepm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#twopm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#threepm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-        }
-        // Sets all times before 5 to red
-        if(timeColors.isAfter(timeslots[0,1,2,3,4,5,6,7,8])){
-          $('#eightam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#nineam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#tenam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#elevenam').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#twelvepm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#onepm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#twopm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#threepm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-    $('#fourpm').css({
-      'background-color': 'red',
-      'max-height': '77px'
-    });
-        }
+      //sets all times before 9 to red, if not 8 yet the 8 am will stay green
+      if (timeColors.isAfter(timeslots[0])) {
+        $('#eightam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+      }
+      //sets all times before 10 to red
+      if (timeColors.isAfter(timeslots[0, 1])) {
+        $('#eightam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#nineam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+      }
+      //sets all times before 11 to red
+      if (timeColors.isAfter(timeslots[0, 1, 2])) {
+        $('#eightam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#nineam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#tenam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+      }
+      //sets all times before 12 to red
+      if (timeColors.isAfter(timeslots[0, 1, 2, 3])) {
+        $('#eightam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#nineam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#tenam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#elevenam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+      }
+      //sets all times before 1 to red
+      if (timeColors.isAfter(timeslots[0, 1, 2, 3, 4])) {
+        $('#eightam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#nineam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#tenam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#elevenam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#twelvepm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+      }
+      //sets all times before 2 to red
+      if (timeColors.isAfter(timeslots[0, 1, 2, 3, 4, 5])) {
+        $('#eightam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#nineam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#tenam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#elevenam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#twelvepm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#onepm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+      }
+      //sets all times before 3 to red
+      if (timeColors.isAfter(timeslots[0, 1, 2, 3, 4, 5, 6])) {
+        $('#eightam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#nineam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#tenam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#elevenam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#twelvepm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#onepm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#twopm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+      }
+      //sets all times before 4 to red
+      if (timeColors.isAfter(timeslots[0, 1, 2, 3, 4, 5, 6, 7])) {
+        $('#eightam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#nineam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#tenam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#elevenam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#twelvepm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#onepm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#twopm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#threepm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+      }
+      // Sets all times before 5 to red
+      if (timeColors.isAfter(timeslots[0, 1, 2, 3, 4, 5, 6, 7, 8])) {
+        $('#eightam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#nineam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#tenam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#elevenam').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#twelvepm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#onepm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#twopm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#threepm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+        $('#fourpm').css({
+          'background-color': 'red',
+          'max-height': '77px'
+        });
+      }
       //GET GREY COLOR
 
       //Between 8 and 9
-      if(timeColors.isBetween(timeslots[0], timeslots[1])){
-          $('#eightam').css({
-      'background-color': 'grey',
-      'max-height': '77px'
-    });
-        }
-        //Between 9 and 10
-        if(timeColors.isBetween(timeslots[1], timeslots[2])){
-          $('#nineam').css({
-      'background-color': 'grey',
-      'max-height': '77px'
-    });
-        }
-        //Between 10 and 11
-        if(timeColors.isBetween(timeslots[2], timeslots[3])){
-          $('#tenam').css({
-      'background-color': 'grey',
-      'max-height': '77px'
-    });
-        }
-        //Between 11 and 12
-        if(timeColors.isBetween(timeslots[3], timeslots[4])){
-          $('#elevenam').css({
-      'background-color': 'grey',
-      'max-height': '77px'
-    });
-        }
-        //Between 12 and 1
-        if(timeColors.isBetween(timeslots[4], timeslots[5])){
-          $('#twelvepm').css({
-      'background-color': 'grey',
-      'max-height': '77px'
-    });
-        }
-        //Between 1 and 2
-        if(timeColors.isBetween(timeslots[5], timeslots[6])){
-          $('#onepm').css({
-      'background-color': 'grey',
-      'max-height': '77px'
-    });
-        }
-        //Between 2 and three
-        if(timeColors.isBetween(timeslots[6], timeslots[7])){
-          $('#twopm').css({
-      'background-color': 'grey',
-      'max-height': '77px'
-    });
-        }
-        //Between 3 and four
-        if(timeColors.isBetween(timeslots[7], timeslots[8])){
-          $('#threepm').css({
-      'background-color': 'grey',
-      'max-height': '77px'
-    });
-        }
-        if(timeColors.isBetween(timeslots[8], timeslots[9])){
-          $('#fourpm').css({
-      'background-color': 'grey',
-      'max-height': '77px'
-    });
-        }
+      if (timeColors.isBetween(timeslots[0], timeslots[1])) {
+        $('#eightam').css({
+          'background-color': 'grey',
+          'max-height': '77px'
+        });
+      }
+      //Between 9 and 10
+      if (timeColors.isBetween(timeslots[1], timeslots[2])) {
+        $('#nineam').css({
+          'background-color': 'grey',
+          'max-height': '77px'
+        });
+      }
+      //Between 10 and 11
+      if (timeColors.isBetween(timeslots[2], timeslots[3])) {
+        $('#tenam').css({
+          'background-color': 'grey',
+          'max-height': '77px'
+        });
+      }
+      //Between 11 and 12
+      if (timeColors.isBetween(timeslots[3], timeslots[4])) {
+        $('#elevenam').css({
+          'background-color': 'grey',
+          'max-height': '77px'
+        });
+      }
+      //Between 12 and 1
+      if (timeColors.isBetween(timeslots[4], timeslots[5])) {
+        $('#twelvepm').css({
+          'background-color': 'grey',
+          'max-height': '77px'
+        });
+      }
+      //Between 1 and 2
+      if (timeColors.isBetween(timeslots[5], timeslots[6])) {
+        $('#onepm').css({
+          'background-color': 'grey',
+          'max-height': '77px'
+        });
+      }
+      //Between 2 and three
+      if (timeColors.isBetween(timeslots[6], timeslots[7])) {
+        $('#twopm').css({
+          'background-color': 'grey',
+          'max-height': '77px'
+        });
+      }
+      //Between 3 and four
+      if (timeColors.isBetween(timeslots[7], timeslots[8])) {
+        $('#threepm').css({
+          'background-color': 'grey',
+          'max-height': '77px'
+        });
+      }
+      if (timeColors.isBetween(timeslots[8], timeslots[9])) {
+        $('#fourpm').css({
+          'background-color': 'grey',
+          'max-height': '77px'
+        });
+      }
     }
     timeColor();
   </script>
