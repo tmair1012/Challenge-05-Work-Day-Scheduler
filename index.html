@@ -166,29 +166,51 @@
       var twelveinput = $('#twelvepm').val()
       localStorage.setItem('twelveinput', JSON.stringify(twelveinput));
     })
+
+    //Save 12 PM on refreesh
     var twelveAppend = localStorage.getItem('twelveinput');
-      document.getElementById('twelvepm').value = twelveAppend
+      document.getElementById('twelvepm').value = twelveAppend;
     
+
     //save 1 input
     $('#onebutton').on('click', function (oneinput) {
       var oneinput = $('#onepm').val()
       localStorage.setItem('oneinput', JSON.stringify(oneinput));
     })
+    //Save 1 PM on refresh
+    var oneAppend = localStorage.getItem('oneinput');
+      document.getElementById('onepm').value = oneAppend;
+
+
     //save 2 input
     $('#twobutton').on('click', function (twoinput) {
       var twoinput = $('#twopm').val()
       localStorage.setItem('twoinput', JSON.stringify(twoinput));
     })
+    //Save 2 PM on refresh
+    var twoAppend = localStorage.getItem('twoinput');
+      document.getElementById('twopm').value = twoAppend;
+
+
     //save 3 input
     $('#threebutton').on('click', function (threeinput) {
       var threeinput = $('#threepm').val()
       localStorage.setItem('threeinput', JSON.stringify(threeinput));
     })
+    //Save 3 PM on refresh
+    var threeAppend = localStorage.getItem('threeinput');
+      document.getElementById('threepm').value = threeAppend;
+
+
     //save 4 input
     $('#fourbutton').on('click', function (fourinput) {
       var fourinput = $('#fourpm').val()
       localStorage.setItem('fourinput', JSON.stringify(fourinput));
     })
+    //Save 4 PM on refresh
+    var fourAppend = localStorage.getItem('fourinput');
+      document.getElementById('fourpm').value = fourAppend;
+
 
 
 
@@ -235,6 +257,7 @@
             'background-color': 'red',
             'max-height': '77px'
           });
+          clearSchedule();
         }
       }
 
