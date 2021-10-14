@@ -26,10 +26,9 @@
       <div class='col-sm-1'>
         <p>8 AM</p>
       </div>
-      <input id='eightam' class='col-sm-9'></input>
-      <div class='col-sm-2'>
-        <button class='saveButton'></button>
-      </div>
+      <input id='eightam' type='text' placeholder ='' class='col-sm-9'></input>
+      <button id='eightbutton' class='col-sm-2'>
+      </button>
     </div>
     <!--9 AM-->
     <div class='row'>
@@ -38,7 +37,7 @@
       </div>
     <input id='nineam' class='col-sm-9'>
     </input>
-      <div class='col-sm-2'></div>
+      <button class='col-sm-2'></button>
     </div>
     <!--10 AM-->
     <div class='row'>
@@ -46,7 +45,7 @@
         <p>10 AM</p>
       </div>
       <input id='tenam'class='col-sm-9'></input>
-      <div class='col-sm-2'></div>
+      <button class='col-sm-2'></button>
     </div>
     <!--11 AM-->
     <div class='row'>
@@ -54,7 +53,7 @@
         <p>11 AM</p>
       </div>
       <input id='elevenam' class='col-sm-9'></input>
-      <div class='col-sm-2'></div>
+      <button class='col-sm-2'></button>
     </div>
     <!--12 PM-->
     <div class='row'>
@@ -62,7 +61,7 @@
         <p>12 PM</p>
       </div>
       <input id='twelvepm'class='col-sm-9'></input>
-      <div class='col-sm-2'></div>
+      <button class='col-sm-2'></button>
     </div>
     <!--1 PM-->
     <div class='row'>
@@ -70,7 +69,7 @@
         <p>1 PM</p>
       </div>
       <input id='onepm'class='col-sm-9'></input>
-      <div class='col-sm-2'></div>
+      <button class='col-sm-2'></button>
     </div>
     <!--2 PM-->
     <div class='row'>
@@ -78,7 +77,7 @@
         <p>2 PM</p>
       </div>
       <input id='twopm'class= 'col-sm-9'></input>
-      <div  class='col-sm-2'></div>
+      <button class='col-sm-2'></button>
     </div>
     <!--3 PM-->
     <div class='row'>
@@ -86,7 +85,7 @@
         <p>3 PM</p>
       </div>
       <input id='threepm'class='col-sm-9'></input>
-      <div class='col-sm-2'></div>
+      <button class='col-sm-2'></button>
     </div>
     <!--4 PM-->
     <div class='row'>
@@ -94,7 +93,7 @@
         <p>4 PM</p>
       </div>
       <input id='fourpm'class='col-sm-9'></input>
-      <div class='col-sm-2'></div>
+      <button class='col-sm-2'></button>
     </div>
 
   </div>
@@ -123,7 +122,15 @@
 
 
     //Function to write into box and save to local storage.
+    
+    var eightinput = $('#eightam').val()
+    
+    $('eightbutton').on('click', function(eightinput){
+      localStorage.setItem('eightinput', JSON.stringify(eightinput));
+    })
 
+
+    
     //clears storage for next day
     function clearSchedule(){
       $('.col-sm-9').empty();
